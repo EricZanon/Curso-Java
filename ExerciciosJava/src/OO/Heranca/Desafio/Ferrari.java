@@ -1,0 +1,31 @@
+package OO.Heranca.Desafio;
+
+public class Ferrari extends Carro implements Esportivo {
+	
+	private boolean ligarTurbo;
+
+	public Ferrari(int velocidadeMaxima) {
+		super(velocidadeMaxima);
+		setDelta(15);;
+	}
+	
+	@Override
+	public void ligarTurbo() {
+		ligarTurbo = true;
+	}
+	
+	@Override
+	public void desligarTurbo() {
+		ligarTurbo = false;
+	}
+	
+	@Override
+	public int getDelta() {
+		if (ligarTurbo) {
+			return 35;
+		} else {
+			return 15;
+		}
+	}
+	
+}
