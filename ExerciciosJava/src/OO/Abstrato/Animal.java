@@ -11,5 +11,7 @@ public abstract class Animal {
 	// abstrato pois ***mover*** varia de animal pra animal
 	// só é possível ter método abstrato em classes abstratas
 	public abstract String mover();
+	
+	//teste
 
 }
