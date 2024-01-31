@@ -47,7 +47,8 @@ public class DesafioInterfacesFuncionais {
 		
 		System.out.println(valorArredondado);
 		
-		Function<Double, String> formatar = (valor) -> "\nO total da compra com desconto,\nfrete e impostos foi: R$ " + valor;
+		Function<Double, String> formatar = (valor) -> 
+		("\nO total da compra com desconto,\nfrete e impostos foi: R$ " + valor).replace(".", ",");
 		
 		String valorFinal = precoDesconto
 		.andThen(impostoMunicipal)
