@@ -1,6 +1,5 @@
 package lambdas;
 
-import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.function.UnaryOperator;
 
@@ -8,17 +7,16 @@ public class DesafioInterfacesFuncionais {
 	
 	public static void main(String[] args) {
 		
-		Produto p = new Produto("Ipad", 3235.89, 0.1);
+		Produto p1 = new Produto("Ipad", 3235.89, 0.1);
 		
-		BinaryOperator<Double> precoDesconto = (preco, desconto) -> preco * (1 - desconto);
-		System.out.println(precoDesconto.apply(p.preco, p.desconto));
+		Function<Produto, Double> precoDesconto = p -> p.preco * (1 - p.desconto);
+		System.out.println(precoDesconto.apply(p1));
 		
-		UnaryOperator<Double> impostoMunicipal = (preco) -> preco >= 2500.00 ? preco * (1 + 0.085) : preco;
-		System.out.println(impostoMunicipal.apply(p.preco));
+		UnaryOperator<Double> impostoMunicipal = (preco) -> preco >= 2500.00 ? preco * 1.085 : preco;
 		
 		double valorComImposto = precoDesconto
 				.andThen(impostoMunicipal)
-				.apply(p.preco, p.desconto);
+				.apply(p1);
 		
 		System.out.println(valorComImposto);
 		
@@ -26,7 +24,7 @@ public class DesafioInterfacesFuncionais {
 		double valorFrete = precoDesconto
 				.andThen(impostoMunicipal)
 				.andThen(frete)
-				.apply(p.preco, p.desconto);
+				.apply(p1);
 		
 		System.out.println(valorFrete);
 		
@@ -45,7 +43,7 @@ public class DesafioInterfacesFuncionais {
 				.andThen(impostoMunicipal)
 				.andThen(frete)
 				.andThen(arredondar)
-				.apply(p.preco, p.desconto);
+				.apply(p1);
 		
 		System.out.println(valorArredondado);
 		
@@ -56,7 +54,7 @@ public class DesafioInterfacesFuncionais {
 		.andThen(frete)
 		.andThen(arredondar)
 		.andThen(formatar)
-		.apply(p.preco, p.desconto);
+		.apply(p1);
 		
 		System.out.println(valorFinal);
 		
