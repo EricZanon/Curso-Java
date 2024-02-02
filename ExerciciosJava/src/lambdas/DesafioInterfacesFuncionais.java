@@ -3,7 +3,7 @@ package lambdas;
 import java.util.function.Function;
 import java.util.function.UnaryOperator;
 
-public class DesafioInterfacesFuncionais {
+public class DesafioInterfacesFuncionais  {
 	
 	public static void main(String[] args) {
 		
@@ -34,6 +34,7 @@ public class DesafioInterfacesFuncionais {
 		* 			                     Double.parseDouble(String.format("%.2f", valor));
 		* 
 		* 														OU
+		* 
 		* 										Math.round(valor * 100.0) / 100.0
 		*  O valor é multiplicado por 100.0 para que volte a ser um double, já que Math.round o converte para Long
 		*  Se o valor original é 12.3456, multiplicar por 100.0 resulta em 1234.56.

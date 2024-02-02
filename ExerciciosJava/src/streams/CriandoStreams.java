@@ -9,6 +9,8 @@ public class CriandoStreams {
 	
 	public static void main(String[] args) {
 		
+		// *** stream = sequência de dados que suporta operações sequênciais ou paralelas ***
+		
 		Consumer<String> print = System.out::print; 
 		Consumer<Integer> printIntln = System.out::println;
 		
@@ -38,6 +40,8 @@ public class CriandoStreams {
 		
 		// .iterate recebe um valor inicial do tipo Int e um UnaryOperator como parâmetros e gera uma Stream infinita ***ordenada***
 		Stream.iterate(0, n -> n+1).forEach(printIntln);
+		
+	
 	}
 
 }
