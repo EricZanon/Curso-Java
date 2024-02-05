@@ -20,7 +20,12 @@ public class DesafioMap {
 		 * 		4. Aplicar interface para as funções -> UtilitáriosMap
 		 */
 		
-		System.out.println("Transformando em binários...");
+		System.out.println("List inicial...");
+		for(int n: nums) {
+			System.out.println(n);
+		}
+		
+		System.out.println("\nTransformando em binários...");
 		
 		nums.stream()
 		.map(UtilitariosMap.paraBinario)
@@ -28,7 +33,7 @@ public class DesafioMap {
 		
 		System.out.println("\nInvertendo os binários...");
 		
-		// tbm é possível converter p binário usando ***Integer::toBinaryString***
+		// tbm é possível converter p binário c method reference ***Integer::toBinaryString***
 		nums.stream()
 		.map(Integer::toBinaryString)
 		.map(UtilitariosMap.inverterBinario)
@@ -42,6 +47,8 @@ public class DesafioMap {
 		.map(UtilitariosMap::paraDecimal)
 		.forEach(printInt);
 		
+		
+		nums.stream().forEach(printInt);
 	}
 
 }
