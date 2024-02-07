@@ -2,7 +2,7 @@ package streams;
 
 public class Aluno {
 	
-	final String nome;
+	private final String nome;
 	final double nota;
 	final boolean bomComportamento = true;
 	
@@ -13,7 +13,7 @@ public class Aluno {
 
 	@Override
 	public String toString() {
-		return nome + " tem nota " + nota;
+		return getNome() + " tem nota " + nota;
 	}
 
 	@Override
@@ -21,7 +21,7 @@ public class Aluno {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + (bomComportamento ? 1231 : 1237);
-		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + ((getNome() == null) ? 0 : getNome().hashCode());
 		long temp;
 		temp = Double.doubleToLongBits(nota);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
@@ -39,14 +39,18 @@ public class Aluno {
 		Aluno other = (Aluno) obj;
 		if (bomComportamento != other.bomComportamento)
 			return false;
-		if (nome == null) {
-			if (other.nome != null)
+		if (getNome() == null) {
+			if (other.getNome() != null)
 				return false;
-		} else if (!nome.equals(other.nome))
+		} else if (!getNome().equals(other.getNome()))
 			return false;
 		if (Double.doubleToLongBits(nota) != Double.doubleToLongBits(other.nota))
 			return false;
 		return true;
+	}
+
+	public String getNome() {
+		return nome;
 	}
 	
 	

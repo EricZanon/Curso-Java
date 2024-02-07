@@ -25,12 +25,12 @@ public class Filter {
 		// depois é feito o mapeamento para converter o objeto aluno para um objeto String 
 		alunos.stream()
 		.filter(a -> a.nota >= 7.0)
-		.map(a -> a.nome + " foi aprovado(a)")
+		.map(a -> a.getNome() + " foi aprovado(a)")
 		.forEach(println);
 		
 		Predicate <Aluno> aprovado = a -> a.nota >= 7.0;
 		Function<Aluno, String> listaAprovados = 
-				a -> a.nome + " foi aprovado(a)";
+				a -> a.getNome() + " foi aprovado(a)";
 		
 		System.out.println("\nUsando as interfaces funcionais...");
 		alunos.stream()
