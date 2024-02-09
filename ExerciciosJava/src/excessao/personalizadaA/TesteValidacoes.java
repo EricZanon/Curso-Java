@@ -6,16 +6,30 @@ public class TesteValidacoes {
 	
 	public static void main(String[] args) {
 		
+		/*
+		 *  
+		 *  Exceções personalizadas não checadas
+		 *  
+		 */
+			
+		
 		try {
-			Aluno a1 = new Aluno("", 7);
-			Validar.aluno(a1);
+			
+			Aluno aluno = new Aluno("a", 10);
+			Validar.aluno(aluno);
 			Validar.aluno(null);
-		} catch (StringVaziaException | NumeroInvalidoException e) {
+			
+		} catch (StringVaziaException e) {
+			System.out.println(e.getMessage());
+		
+		} catch (NumeroInvalidoException | IllegalArgumentException e) {
 			System.out.println(e.getMessage());
 		}
 		
-		System.out.println("fim :)");
+		System.out.println("fim");
+		
+		
 		
 	}
-
+	
 }

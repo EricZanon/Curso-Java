@@ -3,16 +3,14 @@ package excessao.personalizadaA;
 @SuppressWarnings("serial")
 public class StringVaziaException extends RuntimeException{
 	
-	private String nomeDoAtributo;	
-
-	public StringVaziaException(String nomeDoAtributo) {
+private String nomeDoAtributo;
+	
+	public StringVaziaException (String nomeDoAtributo) {
 		this.nomeDoAtributo = nomeDoAtributo;
 	}
 	
+	@Override
 	public String getMessage() {
-		return String.format("O atributo '%s' é vazio", nomeDoAtributo);
+		return String.format("O atributo '%s' está vazio", nomeDoAtributo);
 	}
-
-	
-
 }

@@ -4,7 +4,7 @@ import excessao.Aluno;
 
 public class Validar {
 	
-	private Validar( ) {}
+	private Validar() {}
 	
 	public static void aluno(Aluno aluno) {
 		
@@ -20,5 +20,5 @@ public class Validar {
 			throw new NumeroInvalidoException("nota");
 		}
 	}
-
+	
 }
